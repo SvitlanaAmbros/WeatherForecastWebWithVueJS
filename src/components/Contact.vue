@@ -1,5 +1,7 @@
 <template>
 	<div class="contact">
+		<h2>Phone:</h2>
+		<h2>Adress:</h2>
 	</div>
 	
 </template>

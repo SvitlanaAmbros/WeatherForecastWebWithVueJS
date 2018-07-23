@@ -32,6 +32,7 @@ import cityForecast from "./CityForecast.vue"
 		    return{
 		    	str: "4 DAY FORECAST IN",
 		     	forecastData: [],
+		     	// URL: "https://api.openweathermap.org/data/2.5/forecast/daily?q=London&units=metric&cnt=4&appid=bf39986af8bdf0ba48542e4331fc29fc",
 		     	city:"Kiev",
 		     	chosen: null,
 		        cities: [
@@ -76,11 +77,15 @@ import cityForecast from "./CityForecast.vue"
 </script>
 
 <style>
-.daysforecast{
-	padding: 20px;
-	background-color :orange;
-	text-align: center;
-}
+	.daysforecast{
+		/*font-style: 28px;*/
+		/*margin-left: 120px;
+		margin-right: 120px;*/
+		/*margin-bottom: 5px;*/
+		padding: 20px;
+		background-color :orange;
+		text-align: center;
+	}
 .cities{
 	font-size:28px;
 	margin: 20px;

@@ -40,32 +40,32 @@
 		props:['element', 'index'],
 		data(){
 			return{
-				computed:{
-						"day": function(){
-							let today = new Date();
-							var dd = today.getDate() + this.index;
-							var mm = today.getMonth() + 1;
-							var yyyy = today.getFullYear();
-							return dd + '/' + mm + '/' + yyyy;
-						},
-						"img": function(){
-							let imgURL = "";
-							switch (this.element.weather[0].main) {
-								case "Clear":
-									imgURL = "sunny.png";
-									break;
-								case"Clouds":
-									imgURL = "cloudness.png";
-									break;
-								case "Rain":
-					                imgURL = "rainny.png";
-					                break;
-							}
-							return require('./assets/' + imgURL);
-						},
-
-				}
-		
+			}
+		},
+		computed:{
+				"day": function(){
+					let today = new Date();
+					var dd = today.getDate() + this.index;
+					var mm = today.getMonth() + 1;
+					var yyyy = today.getFullYear();
+					return dd + '/' + mm + '/' + yyyy;
+				},
+				"img": function(){
+					let imgURL = "";
+					switch (this.element.weather[0].main) {
+						case "Clear":
+							imgURL = "sunny.png";
+							break;
+						case"Clouds":
+							imgURL = "cloudness.png";
+							break;
+						case "Rain":
+			                imgURL = "rainny.png";
+			                break;
+					}
+					return require('../assets/' + imgURL);
+				},
+		}	
 }
 
 </script>

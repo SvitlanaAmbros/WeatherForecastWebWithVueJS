@@ -8,10 +8,10 @@ Vue.use(VueRouter)
 
 import 'vuetify/dist/vuetify.min.css'
 
-import Forecast from "./Forecast.vue"
-import Contact from "./Contact.vue"
-import CityForecast from "./CityForecast.vue"
-import Main from "./Main.vue"
+import Forecast from "./components/Forecast.vue"
+import Contact from "./components/Contact.vue"
+import CityForecast from "./components/CityForecast.vue"
+import Main from "./components/Main.vue"
 
 const routes = [
 		{path:"/", component: Main},
