@@ -4,8 +4,7 @@
 		    <v-carousel-item v-for="(item,i) in items" :src="item.src" :key="i"></v-carousel-item>
 		</v-carousel>
 		<div class="welcome">
-			<h1 class="text-lg-center"> We offer actual weather forecast in your city</h1>
-			<h1 class="text-lg-center">Always keep it touch with us</h1>
+			<h1 class="text-lg-center"> We offer actual weather forecast in your city</br>Always keep it touch with us</h1>
 		</div>
 	</div>
 </template>
@@ -41,6 +40,7 @@
 	margin_top: 20px;
 }
 .welcome{
-	margin: 20px;
+	text-transform: uppercase;
+	margin: 60px 0 60px;
 }
 </style>

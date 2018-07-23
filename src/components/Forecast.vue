@@ -1,26 +1,22 @@
 <template>	
-	<div>
-		<h1 class="daysforecast">{{str}}  {{cityToUpperCase}}</h1>
-	<div class="container">
+	<div class="page">
+		<h1 class="daysforecast">{{str}}{{cityToUpperCase}}</h1>
+		<div class="container">
+			<div class = "cities">
+			    <radiogroup v-for="item in cities"> 
+			        <input type="radio" v-model="chosen" :value="item.value" @change="changeValue(item.value)"> {{ item.value }} 
+			    </radiogroup>
+			  </ul>
+			</div>
 
-	<div class = "cities">
-	    <radiogroup v-for="item in cities"> 
-	        <input type="radio" v-model="chosen" :value="item.value" @change="changeValue(item.value)"> {{ item.value }} 
-	    </radiogroup>
-	  </ul>
-	</div>
-
-	<v-container fluid grid-list-md>
-	    <v-layout row wrap >
-
-	 	<cityForecast v-for="(dayData, index) in forecastData.list" :element="dayData" :index="index" />
-
-	  </v-layout>
-	  </v-container>
-  	</div>
+			<v-container fluid grid-list-md>
+			    <v-layout row wrap >
+			 		<cityForecast v-for="(dayData, index) in forecastData.list" :element="dayData" :index="index" />
+				</v-layout>
+			</v-container>
+	  	</div>
   	</div>
 </template>
-
 
 <script>
 import cityForecast from "./CityForecast.vue"
@@ -32,9 +28,8 @@ import cityForecast from "./CityForecast.vue"
 		    return{
 		    	str: "4 DAY FORECAST IN",
 		     	forecastData: [],
-		     	// URL: "https://api.openweathermap.org/data/2.5/forecast/daily?q=London&units=metric&cnt=4&appid=bf39986af8bdf0ba48542e4331fc29fc",
 		     	city:"Kiev",
-		     	chosen: null,
+		     	chosen: "Kiev",
 		        cities: [
 		          { value: 'Singapore'},
 		          { value: 'Kiev' },
@@ -77,20 +72,19 @@ import cityForecast from "./CityForecast.vue"
 </script>
 
 <style>
-	.daysforecast{
-		/*font-style: 28px;*/
-		/*margin-left: 120px;
-		margin-right: 120px;*/
-		/*margin-bottom: 5px;*/
-		padding: 20px;
-		background-color :orange;
-		text-align: center;
-	}
+.page{
+	background: url('../assets/fon.jpg')no-repeat center center;
+}
+.daysforecast{
+	padding: 20px;
+	background-color :orange;
+	text-align: center;
+}
 .cities{
 	font-size:28px;
-	margin: 20px;
-	background-color: #7E57C2;
-	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.6);
+	box-shadow: 0 10px 70px rgba(0, 0, 0.15);
+	border-radius: 5px;
 	color: white;
 	text-align: center;
 }
