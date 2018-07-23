@@ -1,6 +1,6 @@
 <template>	
 	<div class="page">
-		<h1 class="daysforecast">{{str}}{{cityToUpperCase}}</h1>
+		<h1 class="daysforecast">{{str}} {{cityToUpperCase}}</h1>
 		<div class="container">
 			<div class = "cities">
 			    <radiogroup v-for="item in cities"> 
